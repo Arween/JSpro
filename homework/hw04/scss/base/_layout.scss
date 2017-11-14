@@ -1,0 +1,19 @@
+#pascalTriangle{
+  width: 80%;
+  p{
+    width: 7.5%;
+    height: 20px;
+    display: inline-block;
+    padding: 10px;
+    //border: 1px solid red;
+    vertical-align: top;
+    text-align: center;
+  }
+  div:nth-of-type(2n){
+    padding-left: 8%;
+  }
+  div{
+    height: 30px;
+    border-bottom: 1px solid white;
+  }
+}
