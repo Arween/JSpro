@@ -254,10 +254,11 @@ inputSearch.addEventListener('keyup', function (event) {
         valFilter = target.value.toLowerCase();
     // console.log(list.length);
     for (var v = 0; v <= list.length; v++) {
-        console.dir(list);
-        console.log(list[v].innerHTML);
-        if (list[v].innerHTML.indexOf(valFilter) > 0) {
-            list[v].style.display = 'block';
+        // console.dir(list);
+        var tempStr = list[v].innerHTML.toLowerCase();
+        console.dir(list[v].innerHTML);
+        if (tempStr.indexOf(valFilter) > 0) {
+            list[v].style.display = 'inline-block';
             count++;
             idCount.innerHTML = 'Найдено стран: ' + count;
         } else {
