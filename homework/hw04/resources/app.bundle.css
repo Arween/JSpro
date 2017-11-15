@@ -2419,6 +2419,31 @@ svg {
     height: 30px;
     border-bottom: 1px solid white; }
 
+.block_search_wp {
+  margin-top: 100px;
+  width: 100%;
+  padding: 100px;
+  background: lightblue; }
+
+.block_search div {
+  padding: 20px;
+  min-width: 100px;
+  margin: 20px 20px 20px 0;
+  display: inline-block;
+  background: chocolate;
+  color: white; }
+
+#count {
+  padding: 20px 30px;
+  color: white;
+  background: steelblue;
+  display: inline-block;
+  vertical-align: top; }
+
+input {
+  display: inline-block;
+  vertical-align: top; }
+
 .b-map {
   position: relative;
   /* :checked */

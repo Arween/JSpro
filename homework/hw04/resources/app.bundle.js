@@ -225,6 +225,8 @@ function getDaysBirthday() {
 
 getDaysBirthday();
 
+// --------------------------- money
+
 var def_translite = {
     null: 'ноль',
     a1: ['один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять'],
@@ -238,6 +240,56 @@ var def_translite = {
     u2: ['миллион', 'миллиона', 'миллионов'],
     u1: ['миллиард', 'миллиарда', 'миллиардов']
 };
+
+// --------------------------- live-search
+
+
+var inputSearch = document.getElementById('liveSearch'),
+    list = document.getElementsByClassName('search__item'),
+    idCount = document.getElementById('count');
+
+inputSearch.addEventListener('keyup', function (event) {
+    var target = event.target,
+        count = 0,
+        valFilter = target.value.toLowerCase();
+    // console.log(list.length);
+    for (var v = 0; v <= list.length; v++) {
+        console.dir(list);
+        console.log(list[v].innerHTML);
+        if (list[v].innerHTML.indexOf(valFilter) > 0) {
+            list[v].style.display = 'block';
+            count++;
+            idCount.innerHTML = 'Найдено стран: ' + count;
+        } else {
+            list[v].style.display = 'none';
+        }
+    }
+});
+// $(document).ready(function(){
+//     $("#filter").keyup(function(){
+//
+//         // Retrieve the input field text and reset the count to zero
+//         var filter = $(this).val(), count = 0;
+//
+//         // Loop through the comment list
+//         $("nav ul li").each(function(){
+//
+//             // If the list item does not contain the text phrase fade it out
+//             if ($(this).text().search(new RegExp(filter, "i"))) {
+//                 $(this).fadeOut();
+//
+//                 // Show the list item if the phrase matches and increase the count by 1
+//             } else {
+//                 $(this).show();
+//                 count++;
+//             }
+//         });
+//
+//         // Update the count
+//         var numberItems = count;
+//         $("#filter-count").text("Number of Filter = "+count);
+//     });
+// });
 
 /***/ }),
 
