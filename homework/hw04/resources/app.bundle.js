@@ -191,30 +191,53 @@ var now = new Date(),
     month = now.getMonth() + 1,
     day = now.getDate(),
     year = now.getFullYear(),
-    birthday = '13.09';
+    birthday = '02.11';
 
 function getDaysBirthday() {
     var tempBirthday = birthday.split('.'),
         monthBirthday = parseInt(tempBirthday[1]),
         dayBirthday = parseInt(tempBirthday[0]);
-    if (monthBirthday < month) {
-        var numCurDaysMonth = new Date(year, month, 0).getDate();
-        console.log('sddsdsadasd');
-    } else if (monthBirthday == month) {
+
+    if (monthBirthday < month || monthBirthday == month && dayBirthday < day) {
+        // console.log(monthBirthday, dayBirthday, month)
+        var resultDays = getDaysMonth(12, month);
+        resultDays += getDaysMonth(monthBirthday, 0);
+        resultDays -= day - dayBirthday;
+    } else if (monthBirthday == month && dayBirthday >= day) {
         var resultDays = Math.round(birthday - day);
     } else {
-        var resultDays = 0;
-        for (var f = month; f < parseInt(tempBirthday[1]); f++) {
-            var numCurDaysMonth = new Date(year, f, 0).getDate();
-            resultDays += numCurDaysMonth;
-        }
+
+        var resultDays = getDaysMonth(monthBirthday, month);
         resultDays -= day - dayBirthday;
+    }
+
+    function getDaysMonth(monthB, m) {
+        var reasultB = 0;
+        for (var f = m; f < monthB; f++) {
+            var numCurDaysMonth = new Date(year, f, 0).getDate();
+            reasultB += numCurDaysMonth;
+        }
+        return reasultB;
     }
 
     console.log(resultDays);
 }
 
 getDaysBirthday();
+
+var def_translite = {
+    null: 'ноль',
+    a1: ['один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять'],
+    a2: ['одна', 'две', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять'],
+    a10: ['десять', 'одиннадцать', 'двенадцать', 'тринадцать', 'четырнадцать', 'пятнадцать', 'шестнадцать', 'семнадцать', 'восемнадцать', 'девятнадцать'],
+    a20: ['двадцать', 'тридцать', 'сорок', 'пятьдесят', 'шестьдесят', 'семьдесят', 'восемьдесят', 'девяносто'],
+    a100: ['сто', 'двести', 'триста', 'четыреста', 'пятьсот', 'шестьсот', 'семьсот', 'восемьсот', 'девятьсот'],
+    uc: ['копейка', 'копейки', 'копеек'],
+    ur: ['рубль', 'рубля', 'рублей'],
+    u3: ['тысяча', 'тысячи', 'тысяч'],
+    u2: ['миллион', 'миллиона', 'миллионов'],
+    u1: ['миллиард', 'миллиарда', 'миллиардов']
+};
 
 /***/ }),
 
