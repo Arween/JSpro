@@ -1,7 +1,7 @@
 # JSpro
 
 
-Homework_06!
+## Homework_06!
 
  GitHub Pages: https://arween.github.io/JSpro/homework/hw06/
 
