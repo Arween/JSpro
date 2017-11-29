@@ -59,12 +59,9 @@ class Cards{
 
 }
 
-const cards = new Cards();
 
-const mycards = cards.createDeckCards();
-console.log(mycards);
-const randomcards = mycards.sort(cards.randomDeck);
-console.log(randomcards);
+// console.log(mycards);
+// console.log(randomcards);
 
 
 
@@ -169,6 +166,11 @@ class Players{
 document.querySelector('button').addEventListener('click', function (e) {
     const numbers = document.querySelector('input').value;
     if (numbers && numbers >= 2){
+        const cards = new Cards();
+
+        const mycards = cards.createDeckCards();
+        const randomcards = mycards.sort(cards.randomDeck);
+        cards.createCardsInDom(randomcards);
         // console.log(players);
         const players = new Players(numbers, randomcards);
         players.createPlayersCards();
@@ -180,7 +182,7 @@ document.querySelector('button').addEventListener('click', function (e) {
     }
 });
 
-cards.createCardsInDom(randomcards);
+
 
 
 
