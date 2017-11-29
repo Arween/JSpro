@@ -1,0 +1,100 @@
+#cardTable{
+  background: darkgreen;
+  padding-top: 100px;
+  height: 100vh;
+  width: calc(100% - 150px);
+  padding-left: 150px;
+}
+body{
+  background: darkgreen;
+
+}
+.card{
+  width: 150px;
+  height: 240px;
+  background: white;
+  border-radius: 10px;
+  margin: 10px;
+}
+#info{
+  color: white;
+  padding-left: 40px;
+  display: inline-block;
+}
+#playersTable{
+  &>div{
+    width: 25%;
+    height: 400px;
+    border: 10px solid white;
+    display: inline-block;
+    text-align: center;
+    margin: 20px;
+    &>div{
+      margin-left: -50px;
+      left: 50%;
+      transform: translateX(-90%);
+    }
+    p.text{
+      color: white;
+      padding: 50px 0;
+    }
+    &.winner{
+      border: 10px solid gold;
+      background: #ffd7004f;
+    }
+  }
+}
+.card{
+  position: relative;
+  box-shadow: 5px 5px 10px #000;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: -120px;
+  &_info{
+    span{
+      color: black;
+      font-size: 20px;
+    }
+    position: absolute;
+    &:nth-of-type(0){
+      top: 20px;
+      left: 10px;
+    }
+    &:nth-of-type(1){
+      bottom: 20px;
+      right: 10px;
+      transform: rotate(-180deg);
+    }
+  }
+  &_suit{
+    position: absolute;
+    top: calc(40% - 10px);
+    right: 50%;
+    transform: translateX(50%);
+    p{
+      font-size: 60px;
+    }
+  }
+}
+button,input{
+  outline: none;
+}
+button{
+  width: 190px;
+  height: 40px;
+  background: lightblue;
+  color: black;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 0;
+}
+input{
+  width: 70px;
+  height: 32px;
+  border: 2px solid black;
+  padding-left: 20px;
+}
+.menu{
+  margin: 20px auto;
+  width: fit-content;
+}
