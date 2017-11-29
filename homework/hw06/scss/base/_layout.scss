@@ -98,3 +98,9 @@ input{
   margin: 20px auto;
   width: fit-content;
 }
+@media only screen and (max-width : 767px) {
+  #playersTable > div {
+    width: 100%;
+  }
+}
+

@@ -1,0 +1,10 @@
+div img {
+    border-radius: 50%;
+    box-shadow: #666666;
+    margin: 0.5em;
+}
+div.place-for-list,
+div.row{
+    display: flex;
+    align-items: center;
+}
